@@ -12,7 +12,7 @@ const daoUsuario = firestore.
   collection("Usuario");
 
  export async function
-  iniciaSesión() {
+  iniciaSesion() {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   provider.setCustomParameters(
@@ -35,13 +35,13 @@ export async function
     alert("No autorizado.");
     location.href = "index.html";
   } else {
-    iniciaSesión();
+    iniciaSesion();
   }
   return false;
 }
 
 export async function
-  terminaSesión() {
+  terminaSesion() {
   try {
     await getAuth().signOut();
   } catch (e) {
