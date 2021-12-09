@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"> </script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"> </script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"> </script>
+	<script src="js/init.js"></script>
+</head>
+<body>
+<mi-cabeza></mi-cabeza>
+<mi-nav></mi-nav>
+<div class="margen">
+		<button type="submit" name="terminarSesion">Cerrar Sesión</button>
+	</div>
+	 <div class="margen">
+	 	<h1 id="bienvenida">Bienvenido</h1>
+	 	<form style="display: inline-block;" name="forma">
+	 		<label class="user">User</label>
+	 		<output name="nombre"></output>
+	 	</form>
+	 </div>
+	 <section class="margen"> 
+	 	<div class="promos">
+	 		<a href="menu.html"><img src="img/ramen.png" class="imgPromos"></a>
+	 	</div>
+	 	<div class="promos">
+	 		<a href="menu.html"><img src="img/tanakas.png" class="imgPromos"></a>
+	 	</div>
+	 </section>
+	 <mi-footer></mi-footer>
+</body>
+	<script type="text/javascript" src="cmp/mi-cabeza.js"></script>
+	<script type="text/javascript" src="cmp/mi-nav.js"></script>
+	<script type="text/javascript" src="cmp/mi-footer.js"></script>
+	<script type="text/javascript" src="js/ctrlSesion.js"></script>
+</html>
