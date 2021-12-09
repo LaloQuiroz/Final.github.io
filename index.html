@@ -14,13 +14,14 @@
 <mi-cabeza></mi-cabeza>
 <mi-nav></mi-nav>
 <div class="margen">
-		<button type="submit" name="terminarSesion">Cerrar Sesión</button>
+		
 	</div>
 	 <div class="margen">
 	 	<h1 id="bienvenida">Bienvenido</h1>
 	 	<form style="display: inline-block;" name="forma">
 	 		<label class="user">User</label>
 	 		<output name="nombre"></output>
+			<button type="submit" name="terminarSesion">Cerrar Sesión</button>
 	 	</form>
 	 </div>
 	 <section class="margen"> 
@@ -36,29 +37,5 @@
 	<script type="text/javascript" src="cmp/mi-cabeza.js"></script>
 	<script type="text/javascript" src="cmp/mi-nav.js"></script>
 	<script type="text/javascript" src="cmp/mi-footer.js"></script>
-	<script>
-		const auth = firebase.auth();
-		const provider = new firebase.auth.GoogleAuthProvider();
-		provider.setCustomParameters({ prompt: "select_account" });
-		auth().onAuthStateChanged(
-			usuario => {
-				if(usuario && usuario.email){
-					nombre.value = usuario.displayName;
-				}
-				else{
-					auth.signInWithRedict(provider);
-				}
-			},
-			procesaError
-			);
-
-		async function terminarSesion(){
-			try{
-				await auth.signOut();
-			}
-			catch (e){
-				procesaError(e);
-			}
-		}
-	</script>
+	<script type="text/javascript" src="js/ctrlSesion.js"></script>
 </html>
