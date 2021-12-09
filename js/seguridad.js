@@ -12,7 +12,7 @@ const daoUsuario = firestore.
   collection("Usuario");
 
  export async function
-  iniciaSesion() {
+  iniciaSesión() {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   provider.setCustomParameters(
@@ -41,7 +41,7 @@ export async function
 }
 
 export async function
-  terminaSesion() {
+  terminaSesión() {
   try {
     await getAuth().signOut();
   } catch (e) {
