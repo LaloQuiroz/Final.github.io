@@ -5,8 +5,8 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  iniciaSesión,
-  terminaSesión
+  iniciaSesion,
+  terminaSesion
 } from "./seguridad.js";
 
 const forma = document["forma"];
@@ -17,10 +17,10 @@ async function
   muestraSesión(usuario) {
   if (usuario && usuario.email) {
     forma.nombre.value = usuario.displayName || "";
-    forma.terminarSesión.
+    forma.terminarSesion.
       addEventListener(
-        "click", terminaSesión);
+        "click", terminaSesion);
   } else {
-    iniciaSesión();
+    iniciaSesion();
   }
 }
