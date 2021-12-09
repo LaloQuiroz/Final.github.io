@@ -11,10 +11,10 @@ import {
 
 const forma = document["forma"];
 
-getAuth().onAuthStateChanged(muestraSesión, muestraError);
+getAuth().onAuthStateChanged(muestraSesion, muestraError);
 
 async function
-  muestraSesión(usuario) {
+  muestraSesion(usuario) {
   if (usuario && usuario.email) {
     forma.nombre.value = usuario.displayName || "";
     forma.terminarSesion.
