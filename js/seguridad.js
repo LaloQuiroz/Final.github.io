@@ -35,7 +35,7 @@ export async function
     alert("No autorizado.");
     location.href = "index.html";
   } else {
-    iniciaSesion();
+    iniciaSesión();
   }
   return false;
 }
