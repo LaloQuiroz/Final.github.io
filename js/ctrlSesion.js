@@ -5,22 +5,22 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  iniciaSesion,
-  terminaSesion
+  iniciaSesión,
+  terminaSesión
 } from "./seguridad.js";
 
 const forma = document["forma"];
 
-getAuth().onAuthStateChanged(muestraSesion, muestraError);
+getAuth().onAuthStateChanged(muestraSesión, muestraError);
 
 async function
-  muestraSesion(usuario) {
+  muestraSesión(usuario) {
   if (usuario && usuario.email) {
     forma.nombre.value = usuario.displayName || "";
-    forma.terminarSesion.
+    forma.terminarSesión.
       addEventListener(
-        "click", terminaSesion);
+        "click", terminaSesión);
   } else {
-    iniciaSesion();
+    iniciaSesión();
   }
 }
