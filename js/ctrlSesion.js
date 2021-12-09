@@ -7,7 +7,7 @@ import {
 import {
   iniciaSesión,
   terminaSesión
-} from "./seguridad.js";
+} from "../js/seguridad.js";
 
 const forma = document["forma"];
 
