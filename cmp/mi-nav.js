@@ -34,7 +34,10 @@ class MiNav extends HTMLElement {
     if(usu && usu.email){
       let html = "";
       const roles = await cargaRoles(usu.email);
+	    let a = false;
       if (roles.has("Admnistrador")) {
+	      a = true;
+	      console.log(a)
         html += 
        `<li>
           <a href=
