@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Platillo nuevo</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="js/init.js"></script>
+    <script type="text/javascript" src="cmp/mi-cabeza.js"></script>
+	<script type="text/javascript" src="cmp/mi-nav.js"></script>
+	<script type="text/javascript" src="cmp/mi-footer.js"></script>
+</head>
+<body>
+	<mi-cabeza></mi-cabeza>
+	<mi-nav></mi-nav>
+	<form class="margen" name="forma">
+		<header>
+			<h1>Platillo nuevo</h1>
+			<div>
+				<button type="submit">Agregar</button>
+				<a href="admin.html">Cancelar</a>
+			</div>
+		</header>
+			<p>
+			<label>
+				Identificador
+				<input type="text" name="id" required class="labelNuevo">
+			</label>
+			</p>
+			<p>
+			<label>
+				Nombre
+				<input type="text" name="nombre" class="labelNuevo">
+			</label>
+			</p>
+			<p>
+			<label>
+				Imagen
+				<input type="file" name="imagen" required accept=".png,.jpng,.jpeg" class="labelNuevo">
+			</label>
+			</p>
+			<p>
+			<label>
+				Precio
+				<input type="number" name="precio" required class="labelNuevo">
+			</label>
+			</p>
+			<p>
+			<label>
+				Descripción
+				<input type="text" name="desc" required class="labelNuevo">
+			</label>
+			</p>
+	</form>
+	<mi-footer></mi-footer>	
+</body>
+
+</html>
