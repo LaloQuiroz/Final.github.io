@@ -91,7 +91,7 @@ async function htmlFila(doc) {
 async function buscaPlatillo(id) {
   if (id) {
     const doc = await daoPlatillo.
-        doc(daoPlatillo).
+        doc(id).
         get();
     if (doc.exists) {
       const data = doc.data();
