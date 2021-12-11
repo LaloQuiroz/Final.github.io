@@ -32,14 +32,12 @@ async function guarda(evt) {
 
     const id = getString(formData, "id").trim();  
     const nombre = getString(formData, "nombre").trim();
-    //const imagen = get(formData, "imagen");
     const precio = getString(formData, "precio").trim();
     const descrip = getString(formData, "descrip").trim();
 
     const modelo = {
       id,
       nombre,
-     // imagen,
       precio,
       descrip 
     };
