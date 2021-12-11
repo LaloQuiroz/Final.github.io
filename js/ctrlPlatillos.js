@@ -45,7 +45,7 @@ async function guarda(evt) {
       precio,
       descrip 
     };
-    await daoPlatillo.add(modelo);
+    //await daoPlatillo.add(modelo);
     await guardaFoto(evt,formData,id, nombre, precio, descrip);
     muestraPlatillos();
   } catch (e) {
