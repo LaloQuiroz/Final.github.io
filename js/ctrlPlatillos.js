@@ -16,6 +16,7 @@ import {
   guardaFoto
 } from "./platillos.js";
 
+
 const daoPlatillo = getFirestore().collection("Platillo");
 
 const forma = document["forma"];
@@ -35,9 +36,8 @@ async function guarda(evt) {
 
     const id = getString(formData, "id").trim();  
     const nombre = getString(formData, "nombre").trim();
-    const imagen = get(formData, "imagen");
     const precio = getString(formData, "precio").trim();
-    const descrip = getString(formData, "descrip").trim();
+    const descrip = getString(formData, "desc").trim();
 
     const modelo = {
       id,
