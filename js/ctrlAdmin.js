@@ -23,7 +23,7 @@ const daoUsuario = firestore.collection("Usuario");
 getAuth().onAuthStateChanged(protege, muestraError);
 
 async function protege(usuario) {
-  if (tieneRol(usuario,["Administrador"])) {
+  if (tieneRol(usuario,["Admnistrador"])) {
     consulta();
   }
 }
