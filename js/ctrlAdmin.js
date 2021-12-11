@@ -29,17 +29,17 @@ async function protege(usuario) {
 }
 
 function consulta() {
-  daoUsuario.onSnapshot(htmlLista, errConsulta);
+  daoPlatillo.onSnapshot(htmlLista, errConsulta);
 }
 
 async function htmlLista(snap) {
   let html = "";
   if (snap.size > 0) {
-    let usuarios = [];
-    snap.forEach(doc => usuarios.
+    let platillos = [];
+    snap.forEach(doc => platillos.
       push(htmlFila(doc)));
     const htmlFilas =
-      await Promise.all(usuarios);
+      await Promise.all(platillos);
     html += htmlFilas.join("");
   } else {
     html += /* html */
@@ -54,10 +54,14 @@ async function htmlLista(snap) {
 async function htmlFila(doc) {
 
   const data = doc.data();
+
   const img = cod(await urlStorage(doc.id));
-  const platillo = await buscaPlatillo(data.idPlatillo);//<--?
-  const roles = await buscaRoles(data.rolIds);
+  const platillo = await buscaPlatillo(data.nombrePlatillo);//<--?
+  const precio = await buscarPrecio(data.precioPlatillo);
+  const desc = await buscarDesc(data.descpPlatillo);
+  //const roles = await buscaRoles(data.rolIds);
   const parámetros = new URLSearchParams();
+
   parámetros.append("id", doc.id);
   return (
     `<li>
@@ -76,24 +80,23 @@ async function htmlFila(doc) {
           <span
               class="secundario">
             ${platillo}<br>
-            ${roles}
+            ${precio}
+            ${desc}
           </span>
         </span>
       </a>
     </li>`);
 }
 
-async function
-  buscaPlatillo(id) {
+async function buscaPlatillo(id) {
   if (id) {
-    const doc =
-      await daoPlatillo.
+    const doc = await daoPlatillo.
         doc(id).
         get();
     if (doc.exists) {
       const data = doc.data();
       return (/* html */
-        `${cod(data.nombre)}`);
+        `${cod(data.nombrePlatillo)}`);
     }
   }
   return " ";
@@ -112,6 +115,8 @@ async function buscaRoles(ids) {
       const data = doc.data();
       html += /* html */
         `<em>${cod(doc.id)}</em>
+        <br>
+        ${cod(data.descripción)}
         <br>`;
     }
     return html;
@@ -120,6 +125,33 @@ async function buscaRoles(ids) {
   }
 }
 
+async function buscarPrecio(idp) {
+  if (idp) {
+    const doc = await daoPlatillo.
+        doc(idp).
+        get();
+    if (doc.exists) {
+      const data = doc.data();
+      return (/* html */
+        `${cod(data.precioPlatillo)}`);
+    }
+  }
+  return " ";
+}
+
+async function buscarDesc(id) {
+  if (id) {
+    const doc = await daoPlatillo.
+        doc(id).
+        get();
+    if (doc.exists) {
+      const data = doc.data();
+      return (/* html */
+        `${cod(data.descpPlatillo)}`);
+    }
+  }
+  return " ";
+}
 function errConsulta(e) {
   muestraError(e);
   consulta();
