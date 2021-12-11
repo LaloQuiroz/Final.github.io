@@ -30,7 +30,7 @@ export async function
     const idPlatillo = getForánea(formData,"id");
     const nombrePlatillo = getForánea(formData, "nombre");
     const precioPlatillo = getForánea(formData, "precio");
-    const descripPlatillo = getForánea(formData, "descrip");
+    const descripPlatillo = getForánea(formData, "desc");
 
     await daoPlatillo.
       doc(id).
