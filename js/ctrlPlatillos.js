@@ -45,7 +45,10 @@ async function guarda(evt) {
       precio,
       descrip 
     };
-    await daoPlatillo.add(modelo);
+    //await daoPlatillo.add(id);
+    await daoPlatillo.add(id);//<--?
+    const daoId = getFirestore().collection(id);//<--?
+    await daoId.add(modelo);//<--?
     await guardaFoto(evt,formData,id);
     muestraPlatillos();
   } catch (e) {
