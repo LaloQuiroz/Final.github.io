@@ -58,7 +58,7 @@ async function htmlFila(doc) {
   const img = cod(await urlStorage(doc.id));
   const platillo = cod(data.nombrePlatillo);
   const precio = cod(data.precioPlatillo);
-  const desc = cod(data.descPlatillo);
+  const desc = cod(data.descripPlatillo);
   //const roles = await buscaRoles(data.rolIds);
   const parámetros = new URLSearchParams();
 
