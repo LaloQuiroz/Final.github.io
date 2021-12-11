@@ -33,7 +33,7 @@ export async function
     await daoUsuario.
       doc(id).
       set({
-        alumnoId,
+        idPlatillo,
         rolIds
       });
     const avatar = formData.get("imagen");
