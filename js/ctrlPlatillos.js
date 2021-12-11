@@ -12,6 +12,9 @@ import {
 import {
   tieneRol
 } from "./seguridad.js";
+import {
+  guardaFoto
+} from "./platillos.js";
 
 const daoPlatillo = getFirestore().collection("Platillo");
 
@@ -32,6 +35,7 @@ async function guarda(evt) {
 
     const id = getString(formData, "id").trim();  
     const nombre = getString(formData, "nombre").trim();
+    const imagen = get(formData, "imagen");
     const precio = getString(formData, "precio").trim();
     const descrip = getString(formData, "descrip").trim();
 
@@ -41,8 +45,8 @@ async function guarda(evt) {
       precio,
       descrip 
     };
-    await daoPlatillo.
-      add(modelo);
+    await daoPlatillo.add(modelo);
+    await guardaFoto(evt,formData,id);
     muestraPlatillos();
   } catch (e) {
     muestraError(e);
