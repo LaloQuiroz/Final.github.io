@@ -80,7 +80,7 @@ async function htmlFila(doc) {
           <span
               class="secundario">
             ${platillo}<br>
-            ${precio}
+            ${precio}<br>
             ${desc}
           </span>
         </span>
