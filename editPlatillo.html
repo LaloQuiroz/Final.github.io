@@ -14,7 +14,7 @@
 <body>
 	<mi-cabeza></mi-cabeza>
 	<mi-nav></mi-nav>
-	<form name="forma">
+	<form name="forma" class="margen">
 		<header>
 			<h1><output name="id">Id del platillo</output></h1>
 			<div class="herramientas">
@@ -24,6 +24,9 @@
 			</div>
 		</header>
 		<figure id="figure">
+			<p>
+				<label>Id<input type="text" name="idPlatillo" disabled=""></label>
+			</p>
 			<img src="" alt="Falta la imagen.">
 			<p>
 				<label>Imagen<input type="file" name="imagen" accept=".png, .jpg, .jpeg"></label>
