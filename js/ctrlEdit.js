@@ -48,6 +48,7 @@ async function busca() {
       forma.precio.value = data.precioPlatillo;
       forma.desc.value = data.descripPlatillo || "";
       //img.src = await urlStorae forma.addEventListener("submit", guarda);
+      forma.addEventListener("submit", guarda1);
       forma.eliminar.addEventListener("click", elimina);
     } else {
       throw new Error(
@@ -67,7 +68,7 @@ async function guarda(evt) {
     const nombrePlatillo = getString(formData, "nombre").trim();
     const precioPlatillo = getString(formData, "precio").trim();
     const descripPlatillo = getString(formData, "desc").trim();
-    forma.addEventListener("submit", guarda1);
+    //forma.addEventListener("submit", guarda1);
     muestraPlatillos();
   } catch (e) {
     muestraError(e);
