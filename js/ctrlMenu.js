@@ -24,7 +24,6 @@ consulta();
 
 function carrito(nombre, precio){
 try{
-  if (id) {
     const docu = await dapCarrito.doc("Ticket").get();
     if(docu.exists) {
       docu.("Ticket").set({
@@ -32,7 +31,6 @@ try{
         precio
       });
       window.alert("El platillo se ha agregado");
-    }
   }
 }catch(Exception e){
   console.log(e);
