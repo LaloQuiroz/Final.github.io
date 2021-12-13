@@ -24,7 +24,7 @@ const daoPlatillo = getFirestore().collection("Platillo");
 const params = new URL(location.href).searchParams;
 const id = params.get("id");
 const forma = document["forma"];
-const img = document.querySelector("img");
+const img = document.querySelector("imagen");
 
 
 getAuth().onAuthStateChanged(protege, muestraError);
