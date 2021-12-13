@@ -39,6 +39,7 @@ async function busca() {
       await daoPlatillo.doc(id).get();
     if (doc.exists) {
       const data = doc.data();
+       img.src = await urlStorage(id);
       forma.idPlatillo.value = id;
       forma.nombre.value = data.nombrePlatillo || "";
       forma.precio.value = data.precioPlatillo;
