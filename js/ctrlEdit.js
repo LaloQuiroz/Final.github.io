@@ -67,13 +67,13 @@ async function guarda(evt) {
     const nombrePlatillo = getString(formData, "nombre").trim();
     const precioPlatillo = getString(formData, "precio").trim();
     const descripPlatillo = getString(formData, "desc").trim();
-    forma.addEventListener("submit", guarda);
+    forma.addEventListener("submit", guarda1);
     muestraPlatillos();
   } catch (e) {
     muestraError(e);
   }
 }
-async function guarda(evt) {
+async function guarda1(evt) {
   await guardaPlatillo(evt,new FormData(forma), id);
 }
 
