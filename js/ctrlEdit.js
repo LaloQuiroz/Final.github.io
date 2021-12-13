@@ -16,6 +16,9 @@ import {
   eliminaStorage,
   urlStorage
 } from "../lib/storage.js";
+import {
+  guardaPlatillo
+} from "./platillos.js";
 
 const daoPlatillo = getFirestore().collection("Platillo");
 const params = new URL(location.href).searchParams;
@@ -64,18 +67,14 @@ async function guarda(evt) {
     const nombrePlatillo = getString(formData, "nombre").trim();
     const precioPlatillo = getString(formData, "precio").trim();
     const descripPlatillo = getString(formData, "desc").trim();
-
-    await daoPlatillo.
-      doc(id).
-      set({
-      	nombrePlatillo,
-      	precioPlatillo, 
-      	descripPlatillo
-      });
+    forma.addEventListener("submit", guarda);
     muestraPlatillos();
   } catch (e) {
     muestraError(e);
   }
+}
+async function guarda(evt) {
+  await guardaPlatillo(evt,new FormData(forma), id);
 }
 
 async function elimina() {
