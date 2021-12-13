@@ -43,7 +43,7 @@ async function busca() {
       forma.nombre.value = data.nombrePlatillo || "";
       forma.precio.value = data.precioPlatillo;
       forma.desc.value = data.descripPlatillo || "";
-      img.src = await urlStorae forma.addEventListener("submit", guarda);
+      //img.src = await urlStorae forma.addEventListener("submit", guarda);
       forma.eliminar.addEventListener("click", elimina);
     } else {
       throw new Error(
