@@ -31,8 +31,9 @@ export async function guardaPlatillo(evt, formData, id) {
     await daoPlatillo.
       doc(id).
       set({
-        alumnoId,
-        rolIds
+        nombrePlatillo,
+        precioPlatillo,
+        descripPlatillo
       });
     const avatar =
       formData.get("imagen");
