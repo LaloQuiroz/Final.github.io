@@ -25,9 +25,9 @@ consulta();
 function carrito(nombre, precio){
 try{
   if (id) {
-    const doc = await dapCarrito.doc("Ticket").get();
-    if(doc.exists) {
-      doc.("Ticket").set({
+    const docu = await dapCarrito.doc("Ticket").get();
+    if(docu.exists) {
+      docu.("Ticket").set({
         nombre, 
         precio
       });
