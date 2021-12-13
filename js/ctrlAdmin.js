@@ -67,7 +67,7 @@ async function htmlFila(doc) {
     `<li>
       <a class="fila conImagen"
           href=
-    "admin.html?${parámetros}">
+    "editPlatillo.html?${parámetros}">
         <span class="marco">
           <img src="${img}"
             alt="Falta el Avatar">
