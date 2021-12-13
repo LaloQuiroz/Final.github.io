@@ -21,25 +21,21 @@ const firestore = getFirestore();
 
 const daoRol = firestore.collection("Rol");
 const daoPlatillo = firestore.collection("Platillo");
-const daoUsuario = firestore.collection("Usuario");
 
-export async function
-   guardaFoto(evt,formData,id, nombre, precio, descrip) {
+export async function guardaPlatillo(evt, formData, id) { 
   try {
     evt.preventDefault();
-    const idPlatillo = getForánea(formData,"id");
-    const nombrePlatillo = getForánea(formData, "nombre");
-    const precioPlatillo = getForánea(formData, "precio");
-    const descripPlatillo = getForánea(formData, "desc");
-
+    const nombrePlatillo = getForánea(formData,"nombre");
+    const precioPlatillo = formData.getAll("precioPlatillo");
+    const descripPlatillo = formData.getAll("desc");
     await daoPlatillo.
       doc(id).
       set({
-      	nombrePlatillo,
-      	precioPlatillo,
-      	descripPlatillo
+        alumnoId,
+        rolIds
       });
-    const avatar = formData.get("imagen");
+    const avatar =
+      formData.get("imagen");
     await subeStorage(id, avatar);
     muestraUsuarios();
   } catch (e) {
