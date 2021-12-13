@@ -41,7 +41,7 @@ async function busca() {
       const data = doc.data();
       forma.idPlatillo.value = doc(id);
       forma.nombre.value = data.nombrePlatillo || "";
-      forma.precio.value = data.precioPlatillo; || "";
+      forma.precio.value = data.precioPlatillo; || 00;
       forma.desc.value = data.descripPlatillo || "";
       img.src = await urlStorae forma.addEventListener("submit", guarda);
       forma.eliminar.addEventListener("click", elimina);
