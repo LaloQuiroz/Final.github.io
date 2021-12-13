@@ -63,7 +63,7 @@ async function guarda(evt) {
     const precioPlatillo = getString(formData, "precio").trim();
     const descripPlatillo = getString(formData, "desc").trim();
 
-    await daoAlumno.
+    await daoPlatillo.
       doc(id).
       set({
       	nombrePlatillo,
