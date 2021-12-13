@@ -58,7 +58,7 @@ async function htmlFila(doc) {
   parámetros.append("id", doc.id);
   return (
     `<li>
-        <span class="marco">
+        <span class="imgEdit">
           <img src="${img}"
             alt="Falta el Avatar">
         </span>
