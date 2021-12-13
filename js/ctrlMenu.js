@@ -29,7 +29,7 @@ try{
       nombre, 
       precio});
       window.alert("El platillo se ha agregado");
-}catch(Exception e){
+}catch(e){
   console.log(e);
 }
 }
