@@ -59,6 +59,7 @@ async function guarda(evt) {
   try {
     evt.preventDefault();
     const formData = new FormData(forma); 
+    img.src = await urlStorage(id);
     const nombrePlatillo = getString(formData, "nombre").trim();
     const precioPlatillo = getString(formData, "precio").trim();
     const descripPlatillo = getString(formData, "desc").trim();
