@@ -170,3 +170,9 @@ display: flex;
 .imgEdit{
   width: 30%;
 }
+
+.imgMenu{
+display: inline-block;
+width: 350px;
+heigth: 200px;
+}
