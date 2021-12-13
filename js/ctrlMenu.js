@@ -20,8 +20,6 @@ const daoRol = firestore.collection("Rol");
 const daoPlatillo = firestore.collection("Platillo");
 const daoUsuario = firestore.collection("Usuario");
 
-getAuth().onAuthStateChanged(protege, muestraError);
-
 function consulta() {
   daoPlatillo.onSnapshot(htmlLista, errConsulta);
 }
