@@ -22,6 +22,23 @@ const daoUsuario = firestore.collection("Usuario");
 
 consulta();
 
+function carrito(nombre, precio){
+try{
+  if (id) {
+    const doc = await dapCarrito.doc("Ticket").get();
+    if(doc.exists) {
+      doc.("Ticket").set({
+        nombre, 
+        precio
+      });
+      window.alert("El platillo se ha agregado");
+    }
+  }
+}catch(Exception e){
+  console.log(e);
+}
+}
+
 function consulta() {
   daoPlatillo.onSnapshot(htmlLista, errConsulta);
 }
@@ -44,6 +61,8 @@ async function htmlLista(snap) {
   }
   lista.innerHTML = html;
 }
+
+
 
 async function htmlFila(doc) {
 
@@ -74,7 +93,7 @@ async function htmlFila(doc) {
             ${desc}<br>
           </span>
         </span>
-        <button type="button" name="agregar">Agregar al carrito</button>
+        <button type="button" name="agregar"  onclick="carrito(this.platillo, this.precio)>Agregar al carrito</button>
         <br>
         <br>
     </li>`);
