@@ -81,7 +81,7 @@ async function elimina() {
     if (confirm("Confirmar la " +
       "eliminación")) {
       await daoPlatillo.doc(id).delete();
-      muestraAlumnos();
+      muestraPlatillos();
     }
   } catch (e) {
     muestraError(e);
