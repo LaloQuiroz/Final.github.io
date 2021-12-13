@@ -39,7 +39,7 @@ async function busca() {
       await daoPlatillo.doc(id).get();
     if (doc.exists) {
       const data = doc.data();
-      forma.idPlatillo.value = doc(id);
+      forma.idPlatillo.value = id;
       forma.nombre.value = data.nombrePlatillo || "";
       forma.precio.value = data.precioPlatillo;
       forma.desc.value = data.descripPlatillo || "";
