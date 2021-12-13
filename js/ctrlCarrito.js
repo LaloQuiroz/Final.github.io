@@ -3,9 +3,15 @@ import {
   getFirestore
 } from "../lib/fabrica.js";
 import {
+  urlStorage
+} from "../lib/storage.js";
+import {
   cod,
   muestraError
 } from "../lib/util.js";
+import {
+  tieneRol
+} from "./seguridad.js";
 
 getAuth().onAuthStateChanged(protege, muestraError);
 
