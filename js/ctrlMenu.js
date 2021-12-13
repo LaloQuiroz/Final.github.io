@@ -75,6 +75,8 @@ async function htmlFila(doc) {
           </span>
         </span>
         <button type="button" name="agregar">Agregar al carrito</button>
+        <br>
+        <br>
     </li>`);
 }
 
