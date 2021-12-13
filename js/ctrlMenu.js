@@ -86,11 +86,10 @@ async function htmlFila(doc) {
             ${platillo}<br>
             ${precio}<br>
             ${desc}<br>
-            <button type="button" name="agregar"  onclick="carrito(this.platillo, this.precio)>Agregar al carrito</button><<br>
+            <br>
+           <br>
           </span>
         </span>
-        <br>
-        <br>
     </li>`);
 }
 
