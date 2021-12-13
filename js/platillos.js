@@ -26,7 +26,7 @@ export async function guardaPlatillo(evt, formData, id) {
   try {
     evt.preventDefault();
     const nombrePlatillo = getForánea(formData,"nombre");
-    const precioPlatillo = formData.getAll("precioPlatillo");
+    const precioPlatillo = formData.getAll("precio");
     const descripPlatillo = formData.getAll("desc");
     await daoPlatillo.
       doc(id).
@@ -38,7 +38,7 @@ export async function guardaPlatillo(evt, formData, id) {
     const avatar =
       formData.get("imagen");
     await subeStorage(id, avatar);
-    muestraUsuarios();
+    muestraPlatillos();
   } catch (e) {
     muestraError(e);
   }
