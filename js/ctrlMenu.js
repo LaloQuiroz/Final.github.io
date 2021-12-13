@@ -19,19 +19,16 @@ const firestore = getFirestore();
 const daoRol = firestore.collection("Rol");
 const daoPlatillo = firestore.collection("Platillo");
 const daoUsuario = firestore.collection("Usuario");
+const daoCarrito = firestore.collection("Ticket");
 
 consulta();
 
 function carrito(nombre, precio){
 try{
-    const docu = await dapCarrito.doc("Ticket").get();
-    if(docu.exists) {
-      docu.("Ticket").set({
-        nombre, 
-        precio
-      });
+    daoCarrito.add({
+      nombre, 
+      precio});
       window.alert("El platillo se ha agregado");
-  }
 }catch(Exception e){
   console.log(e);
 }
