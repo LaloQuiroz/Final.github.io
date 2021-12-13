@@ -58,9 +58,9 @@ async function htmlFila(doc) {
   parámetros.append("id", doc.id);
   return (
     `<li>
-        <span class="imgMenu">
+        <span>
           <img src="${img}"
-            alt="Falta el Avatar">
+            alt="Falta el Avatar" class="imgMenu">
         </span>
         <span class="texto">
           <strong
